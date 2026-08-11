@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok Melo Store — Abonnés, J'aime & Vues TikTok</title>
+<meta name="description" content="Achetez des abonnés TikTok, j'aime et vues. Livraison rapide et sécurisée.">
+<style>
+  :root {
+    --noir: #0f0f0f;
+    --cyan: #25F4EE;
+    --rose: #FE2C55;
+    --blanc: #ffffff;
+    --gris: #8a8a8a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: var(--noir); color: var(--blanc); line-height: 1.6; }
+  .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+
+  /* ---------- HEADER ---------- */
+  header { position: sticky; top: 0; z-index: 100; background: rgba(15,15,15,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #222; }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; max-width: 1100px; margin: auto; }
+  .logo { font-size: 22px; font-weight: 800; text-decoration: none; color: var(--blanc); }
+  .logo span { color: var(--cyan); }
+  nav a { color: var(--blanc); text-decoration: none; margin-left: 22px; font-size: 15px; }
+  nav a:hover { color: var(--cyan); }
+  .btn { display: inline-block; background: var(--rose); color: var(--blanc); padding: 10px 22px; border-radius: 50px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 15px; transition: .2s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(254,44,85,.4); }
+  .btn-cyan { background: var(--cyan); color: var(--noir); }
+  .btn-cyan:hover { box-shadow: 0 6px 18px rgba(37,244,238,.4); }
+
+  /* ---------- HERO ---------- */
+  .hero { text-align: center; padding: 90px 20px 60px; background: radial-gradient(circle at 20% 20%, rgba(254,44,85,.25), transparent 50%), radial-gradient(circle at 80% 30%, rgba(37,244,238,.22), transparent 50%); }
+  .hero h1 { font-size: clamp(34px, 6vw, 56px); font-weight: 900; margin-bottom: 16px; }
+  .hero h1 em { font-style: normal; color: var(--cyan); }
+  .hero p { color: #ccc; font-size: clamp(16px, 2.5vw, 20px); max-width: 640px; margin: 0 auto 30px; }
+  .badges { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+  .badge { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 12px 20px; font-size: 14px; color: #ccc; }
+  .badge b { color: var(--blanc); display: block; font-size: 18px; }
+
+  /* ---------- SECTION TITRE ---------- */
+  .section { padding: 60px 20px; }
+  .section h2 { text-align: center; font-size: clamp(26px, 4vw, 36px); font-weight: 800; margin-bottom: 10px; }
+  .section .sub { text-align: center; color: var(--gris); margin-bottom: 40px; }
+
+  /* ---------- TARIFS ---------- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .card { background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 28px 24px; text-align: center; transition: .25s; }
+  .card:hover { border-color: var(--cyan); transform: translateY(-4px); }
+  .card.pop { border-color: var(--rose); box-shadow: 0 0 30px rgba(254,44,85,.25); position: relative; }
+  .card.pop::before { content: "POPULAIRE"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--rose); font-size: 11px; font-weight: 800; letter-spacing: 1px; padding: 4px 14px; border-radius: 20px; }
+  .card h3 { font-size: 18px; margin-bottom: 6px; }
+  .card .qty { font-size: 34px; font-weight: 900; }
+  .card .price { font-size: 26px; font-weight: 800; color: var(--cyan); margin: 12px 0 4px; }
+  .card .old-price { color: var(--gris); text-decoration: line-through; font-size: 15px; }
+  .card ul { list-style: none; margin: 18px 0 22px; text-align: left; }
+  .card li { padding: 6px 0; border-bottom: 1px dashed #2a2a2a; font-size: 14px; color: #ccc; }
+  .card li::before { content: "✔ "; color: var(--cyan); }
+
+  /* ---------- COMMENT ÇA MARCHE ---------- */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 20px; }
+  .step { text-align: center; padding: 24px; background: #161616; border-radius: 16px; border: 1px solid #262626; }
+  .step .num { width: 44px; height: 44px; margin: 0 auto 14px; border-radius: 50%; background: var(--rose); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 20px; }
+  .step h4 { margin-bottom: 6px; }
+
+  /* ---------- FORMULAIRE ---------- */
+  form { max-width: 560px; margin: auto; background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 32px; }
+  label { display: block; font-size: 14px; margin: 16px 0 6px; color: #ccc; }
+  input, select, textarea { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid #333; background: #0f0f0f; color: var(--blanc); font-size: 15px; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--cyan); }
+  form .btn { width: 100%; margin-top: 24px; }
+
+  /* ---------- FAQ ---------- */
+  details { background: #161616; border: 1px solid #262626; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; max-width: 760px; margin-left: auto; margin-right: auto; }
+  summary { font-weight: 700; cursor: pointer; }
+  details p { color: #bbb; margin-top: 10px; font-size: 15px; }
+
+  /* ---------- FOOTER ---------- */
+  footer { border-top: 1px solid #222; padding: 30px 20px; text-align: center; color: var(--gris); font-size: 14px; }
+  footer a { color: var(--cyan); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    nav a { margin-left: 14px; font-size: 14px; }
+    .card { padding: 22px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">TikTok <span>Melo</span> Store</a>
+    <nav>
+      <a href="#services">Tarifs</a>
+      <a href="#comment">Comment ça marche</a>
+      <a href="#commande">Commander</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <h1>Boostez votre compte <em>TikTok</em> dès aujourd'hui</h1>
+    <p>Abonnés, j'aime et vues de qualité, livrés rapidement en toute sécurité. Démarrage immédiat après commande.</p>
+    <a href="#commande" class="btn">Commander maintenant</a>
+    <div class="badges">
+      <div class="badge"><b>+15 000</b>Clients satisfaits</div>
+      <div class="badge"><b>24/7</b>Support disponible</div>
+      <div class="badge"><b>2-24h</b>Début de livraison</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TARIFS ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <h2>Nos tarifs</h2>
+    <p class="sub">Choisissez votre pack et passez commande en moins d'une minute</p>
+    <div class="grid">
+
+      <!-- Abonnés -->
+      <div class="card">
+        <h3>Abonnés TikTok</h3>
+        <div class="qty">1 000</div>
+        <div class="price">9,99 €</div>
+        <div class="old-price">14,99 €</div>
+        <ul>
+          <li>Profil réel & actif</li>
+          <li>Livraison en 2 à 12 h</li>
+          <li>Sans mot de passe</li>
+          <li>Garantie de remplacement</li>
+        </ul>
+        <button class="btn btn-cyan" onclick="selectPack('Abonnés TikTok — 1 000 (9,99 €)')">Choisir</button>
+      </div>
+
+      <div class="card pop">
+        <h3>Abonnés TikTok</h3>
+        <div class="qty">5 000</div>
+        <div class="price">39,99 €</div>
+        <div class="old-price">59,99 €</div>
+        <ul>
+          <li>Profil réel & actif</li>
+          <li>Livraison progressive (anti-flag)</li>
+          <li>Sans mot de passe</li>
+          <li>Support prioritaire</li>
+        </ul>
+        <button class="btn" onclick="selectPack('Abonnés TikTok — 5 000 (39,99 €)')">Choisir</button>
+      </div>
+
+      <div class="card">
+        <h3>Abonnés TikTok</h3>
+        <div class="qty">10 000</div>
+        <div class="price">69,99 €</div>
+        <div class="old-price">99,99 €</div>
+        <ul>
+          <li>Profil réel & actif</li>
+          <li>Livraison échelonnée</li>
+          <li>Sans mot de passe</li>
+          <li>Garantie 30 jours</li>
+        </ul>
+        <button class="btn btn-cyan" onclick="selectPack('Abonnés TikTok — 10 000 (69,99 €)')">Choisir</button>
+      </div>
+
+      <!-- J'aime -->
+      <div class="card">
+        <h3>J'aime TikTok</h3>
+        <div class="qty">500</div>
+        <div class="price">4,99 €</div>
+        <div class="old-price">7,99 €</div>
+        <ul>
+          <li>J'aime sur votre vidéo</li>
+          <li>Livraison en 1 à 6 h</li>
+          <li>Sans mot de passe</li>
+          <li>Garantie de remplacement</li>
+        </ul>
+        <button class="btn btn-cyan" onclick="selectPack('J\'aime TikTok — 500 (4,99 €)')">Choisir</button>
+      </div>
+
+      <div class="card">
+        <h3>J'aime TikTok</h3>
+        <div class="qty">2 000</div>
+        <div class="price">12,99 €</div>
+        <div class="old-price">19,99 €</div>
+        <ul>
+          <li>J'aime sur votre vidéo</li>
+          <li>Livraison en 1 à 6 h</li>
+          <li>Sans mot de passe</li>
+          <li>Garantie 30 jours</li>
+        </ul>
+        <button class="btn btn-cyan" onclick="selectPack('J\'aime TikTok — 2 000 (12,99 €)')">Choisir</button>
+      </div>
+
+      <div class="card">
+        <h3>Vues TikTok</h3>
+        <div class="qty">10 000</div>
+        <div class="price">14,99 €</div>
+        <div class="old-price">24,99 €</div>
+        <ul>
+          <li>Vues sur votre vidéo</li>
+          <li>Livraison en 2 à 12 h</li>
+          <li>Sans mot de passe</li>
+          <li>Garantie de remplacement</li>
+        </ul>
+        <button class="btn btn-cyan" onclick="selectPack('Vues TikTok — 10 000 (14,99 €)')">Choisir</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMENT ÇA MARCHE ============ -->
+<section class="section" id="comment" style="background:#111;">
+  <div class="container">
+    <h2>Comment ça marche ?</h2>
+    <p class="sub">3 étapes simples et vous êtes lancé</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Choisissez votre pack</h4>
+        <p>Sélectionnez le nombre d'abonnés, de j'aime ou de vues adapté à votre objectif.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Indiquez votre pseudo</h4>
+        <p>Remplissez le formulaire avec votre @pseudo TikTok. Aucun mot de passe requis.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Recevez vos résultats</h4>
+        <p>La livraison démarre rapidement. Suivez votre progression et votre compte explose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMANDE ============ -->
+<section class="section" id="commande">
+  <div class="container">
+    <h2>Passer commande</h2>
+    <p class="sub">Réponse sous quelques minutes sur WhatsApp ou Telegram</p>
+    <form id="orderForm">
+      <label for="pack">Pack choisi</label>
+      <select id="pack" required>
+        <option value="">— Sélectionnez un pack —</option>
+        <option>Abonnés TikTok — 1 000 (9,99 €)</option>
+        <option>Abonnés TikTok — 5 000 (39,99 €)</option>
+        <option>Abonnés TikTok — 10 000 (69,99 €)</option>
+        <option>J'aime TikTok — 500 (4,99 €)</option>
+        <option>J'aime TikTok — 2 000 (12,99 €)</option>
+        <option>Vues TikTok — 10 000 (14,99 €)</option>
+      </select>
+
+      <label for="pseudo">Votre pseudo TikTok</label>
+      <input type="text" id="pseudo" placeholder="@votrecompte" required>
+
+      <label for="url">Lien de la vidéo (pour j'aime / vues)</label>
+      <input type="text" id="url" placeholder="https://www.tiktok.com/@pseudo/video/...">
+
+      <label for="contact">Votre WhatsApp ou Telegram</label>
+      <input type="text" id="contact" placeholder="+33 6 12 34 56 78" required>
+
+      <label for="msg">Message (optionnel)</label>
+      <textarea id="msg" rows="3" placeholder="Précisions, demande spéciale..."></textarea>
+
+      <button type="button" class="btn" onclick="sendOrder()">Envoyer ma commande</button>
+      <p id="formInfo" style="text-align:center;color:var(--gris);font-size:13px;margin-top:14px;"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" style="background:#111;">
+  <div class="container">
+    <h2>Questions fréquentes</h2>
+    <p class="sub">Tout ce qu'il faut savoir avant de commander</p>
+
+    <details open>
+      <summary>Faut-il donner mon mot de passe ?</summary>
+      <p>Non, jamais. Vous indiquez uniquement votre pseudo TikTok. Notre système ne demande aucun accès à votre compte.</p>
+    </details>
+    <details>
+      <summary>Combien de temps dure la livraison ?</summary>
+      <p>Les j'aime démarrent en 1 à 6 heures, les abonnés en 2 à 12 heures. Les gros packs sont livrés progressivement pour protéger votre compte.</p>
+    </details>
+    <details>
+      <summary>Mes abonnés peuvent-ils disparaître ?</summary>
+      <p>Nous offrons une garantie de remplacement : si un nombre d'abonnés diminue sous le seuil commandé dans les 30 jours, nous le remplaçons gratuitement.</p>
+    </details>
+    <details>
+      <summary>Quels sont les moyens de paiement ?</summary>
+      <p>Paiement par carte, mobile money ou crypto selon votre pays. Les détails vous sont communiqués après validation de la commande.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <p><strong>TikTok Melo Store</strong> — Service de croissance TikTok. Nous ne sommes pas affiliés à TikTok.</p>
+    <p style="margin-top:6px;"><a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Contact</a></p>
+    <p style="margin-top:6px;">© 2026 TikTok Melo Store. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  // Pré-remplit le formulaire quand on clique sur "Choisir" dans les tarifs
+  function selectPack(pack) {
+    document.getElementById('pack').value = pack;
+    document.getElementById('commande').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Envoie la commande via WhatsApp (remplacez le numéro par le vôtre)
+  function sendOrder() {
+    const pack = document.getElementById('pack').value;
+    const pseudo = document.getElementById('pseudo').value.trim();
+    const url = document.getElementById('url').value.trim();
+    const contact = document.getElementById('contact').value.trim();
+    const msg = document.getElementById('msg').value.trim();
+
+    if (!pack || !pseudo || !contact) {
+      document.getElementById('formInfo').textContent = '⚠️ Veuillez remplir le pack, le pseudo et le contact.';
+      return;
+    }
+
+    const texte = `Bonjour TikTok Melo Store !\n\n📦 Pack : ${pack}\n👤 Pseudo TikTok : ${pseudo}` +
+                  (url ? `\n🔗 Vidéo : ${url}` : '') +
+                  `\n📱 Contact : ${contact}` +
+                  (msg ? `\n💬 Message : ${msg}` : '');
+
+    // 👉 Remplacez 33612345678 par VOTRE numéro WhatsApp (format international, sans +)
+    const whatsapp = 'https://wa.me/33612345678?text=' + encodeURIComponent(texte);
+    window.open(whatsapp, '_blank');
+
+    document.getElementById('formInfo').textContent = '✅ Ouverture de WhatsApp... Si rien ne se passe, vérifiez le numéro dans le code.';
+  }
+</script>
+
+</body>
+</html>
