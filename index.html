@@ -76,6 +76,8 @@
   .card:hover { border-color: var(--cyan); transform: translateY(-4px); }
   .card.pop { border-color: var(--rose); box-shadow: 0 0 30px rgba(254,44,85,.25); position: relative; }
   .card.pop::before { content: "POPULAIRE"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--rose); font-size: 11px; font-weight: 800; letter-spacing: 1px; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
+  .card.new { border-color: var(--cyan); box-shadow: 0 0 30px rgba(37,244,238,.25); position: relative; }
+  .card.new::before { content: "NOUVEAU"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--cyan); color: var(--noir); font-size: 11px; font-weight: 800; letter-spacing: 1px; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
   .card h3 { font-size: 20px; margin-bottom: 4px; }
   .card .qty { font-size: 48px; font-weight: 900; line-height: 1.1; }        /* TRÈS GROS */
   .card .price { font-size: 34px; font-weight: 800; color: var(--cyan); margin: 10px 0 4px; }  /* TRÈS GROS */
@@ -160,6 +162,21 @@
     <h2>Nos tarifs</h2>
     <p class="sub">Choisissez votre pack et passez commande en moins d'une minute — faites glisser ➡ — prix en Francs CFA</p>
     <div class="grid">
+
+      <!-- 🆕 Monétiser Compte TikTok (1ʳᵉ offre) -->
+      <div class="card new">
+        <h3>Monétiser Compte TikTok</h3>
+        <div class="qty">100%</div>
+        <div class="price">2 000 FCFA</div>
+        <div class="old-price">10 000 FCFA</div>
+        <ul>
+          <li>Activation de la monétisation</li>
+          <li>Livraison en 24 à 48 h</li>
+          <li>Sans mot de passe</li>
+          <li>Support prioritaire</li>
+        </ul>
+        <button class="btn btn-cyan" onclick="selectPack('Monétiser Compte TikTok — 100% (2 000 FCFA)')">Choisir</button>
+      </div>
 
       <!-- Abonnés 1 000 -->
       <div class="card">
@@ -359,6 +376,7 @@
       <label for="pack">Pack choisi</label>
       <select id="pack" required>
         <option value="">— Sélectionnez un pack —</option>
+        <option>Monétiser Compte TikTok — 100% (2 000 FCFA)</option>
         <option>Abonnés TikTok — 1 000 (2 000 FCFA)</option>
         <option>Abonnés TikTok — 5 000 (5 000 FCFA)</option>
         <option>Abonnés TikTok — 10 000 (9 500 FCFA)</option>
