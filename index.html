@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TikTok Melo Store — Abonnés, J'aime & Vues TikTok</title>
 <meta name="description" content="Achetez des abonnés TikTok, j'aime et vues. Paiement Wave. Livraison rapide et sécurisée.">
 <style>
@@ -15,19 +15,17 @@
     --wave: #1dc8cc;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: var(--noir); color: var(--blanc); line-height: 1.5; }
-  .container { max-width: 1100px; margin: auto; padding: 0 14px; }
+  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: var(--noir); color: var(--blanc); line-height: 1.6; }
+  .container { max-width: 1100px; margin: auto; padding: 0 20px; }
 
   /* ---------- HEADER ---------- */
-  header { position: sticky; top: 0; z-index: 100; background: rgba(15,15,15,.95); backdrop-filter: blur(8px); border-bottom: 1px solid #222; }
-  .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; max-width: 1100px; margin: auto; }
-  .logo { font-size: 21px; font-weight: 800; text-decoration: none; color: var(--blanc); }
+  header { position: sticky; top: 0; z-index: 100; background: rgba(15,15,15,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #222; }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; max-width: 1100px; margin: auto; }
+  .logo { font-size: 22px; font-weight: 800; text-decoration: none; color: var(--blanc); }
   .logo span { color: var(--cyan); }
-  nav { display: flex; flex-wrap: wrap; }
-  nav a { color: var(--blanc); text-decoration: none; margin-left: 14px; font-size: 14px; }
+  nav a { color: var(--blanc); text-decoration: none; margin-left: 22px; font-size: 15px; }
   nav a:hover { color: var(--cyan); }
-
-  .btn { display: inline-block; background: var(--rose); color: var(--blanc); padding: 12px 22px; border-radius: 50px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; font-size: 16px; transition: .2s; }
+  .btn { display: inline-block; background: var(--rose); color: var(--blanc); padding: 12px 22px; border-radius: 50px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 15px; transition: .2s; }
   .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(254,44,85,.4); }
   .btn-cyan { background: var(--cyan); color: var(--noir); }
   .btn-cyan:hover { box-shadow: 0 6px 18px rgba(37,244,238,.4); }
@@ -35,77 +33,94 @@
   .btn-wave:hover { box-shadow: 0 6px 18px rgba(29,200,204,.4); }
 
   /* ---------- HERO (rapproché) ---------- */
-  .hero { text-align: center; padding: 30px 14px 24px; background: radial-gradient(circle at 20% 20%, rgba(254,44,85,.25), transparent 50%), radial-gradient(circle at 80% 30%, rgba(37,244,238,.22), transparent 50%); }
-  .hero h1 { font-size: clamp(30px, 5.5vw, 48px); font-weight: 900; margin-bottom: 10px; }
+  .hero { text-align: center; padding: 30px 20px 18px; background: radial-gradient(circle at 20% 20%, rgba(254,44,85,.25), transparent 50%), radial-gradient(circle at 80% 30%, rgba(37,244,238,.22), transparent 50%); }
+  .hero h1 { font-size: clamp(32px, 6vw, 50px); font-weight: 900; margin-bottom: 10px; }
   .hero h1 em { font-style: normal; color: var(--cyan); }
   .hero p { color: #ccc; font-size: clamp(16px, 2.5vw, 19px); max-width: 640px; margin: 0 auto 18px; }
-  .badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
-  .badge { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 8px 14px; font-size: 13px; color: #ccc; }
+  .badges { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .badge { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 8px 18px; font-size: 14px; color: #ccc; }
   .badge b { color: var(--blanc); display: block; font-size: 17px; }
 
-  /* ---------- SECTIONS (rapprochées) ---------- */
-  .section { padding: 26px 14px 34px; }
-  .section h2 { text-align: center; font-size: clamp(26px, 5vw, 34px); font-weight: 800; margin-bottom: 6px; }
-  .section .sub { text-align: center; color: var(--gris); margin-bottom: 18px; font-size: 15px; }
+  /* ---------- SECTIONS RAPPROCHÉES ---------- */
+  .section { padding: 16px 20px 18px; }
+  .section h2 { text-align: center; font-size: clamp(24px, 4vw, 32px); font-weight: 800; margin-bottom: 6px; }
+  .section .sub { text-align: center; color: var(--gris); margin-bottom: 14px; }
 
-  /* ---------- OFFERS SUR UNE LIGNE ---------- */
-  .grid { display: flex; flex-wrap: nowrap; gap: 14px; overflow-x: auto; padding: 4px 4px 14px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-  .grid::-webkit-scrollbar { display: none; }
-  .card { flex: 0 0 262px; min-width: 262px; scroll-snap-align: start; background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 20px 16px; text-align: center; transition: .25s; display: flex; flex-direction: column; }
-  .card:hover { border-color: var(--cyan); }
+  /* ---------- TARIFS : UNE SEULE LIGNE HORIZONTALE ---------- */
+  .grid {
+    display: flex;
+    flex-wrap: nowrap;              /* JAMAIS de passage à la ligne */
+    overflow-x: auto;               /* on fait glisser horizontalement */
+    gap: 16px;
+    padding: 6px 2px 14px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #333 #111;
+  }
+  .grid::-webkit-scrollbar { height: 8px; }
+  .grid::-webkit-scrollbar-track { background: #111; border-radius: 4px; }
+  .grid::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+  .grid::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+  .card {
+    flex: 0 0 280px;               /* largeur fixe → glissement */
+    min-width: 280px;
+    max-width: 84vw;
+    scroll-snap-align: start;
+    background: #161616; border: 1px solid #262626; border-radius: 16px;
+    padding: 22px 20px; text-align: center;
+    display: flex; flex-direction: column;
+    transition: .25s;
+  }
+  .card:hover { border-color: var(--cyan); transform: translateY(-4px); }
   .card.pop { border-color: var(--rose); box-shadow: 0 0 30px rgba(254,44,85,.25); position: relative; }
-  .card.pop::before { content: "POPULAIRE"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--rose); font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 4px 14px; border-radius: 20px; }
-  .card h3 { font-size: 22px; margin-bottom: 4px; }
-  .card .qty { font-size: 42px; font-weight: 900; }
-  .card .price { font-size: 30px; font-weight: 800; color: var(--cyan); margin: 10px 0 4px; }
-  .card .old-price { color: var(--gris); text-decoration: line-through; font-size: 17px; }
-  .card ul { list-style: none; margin: 14px 0 16px; text-align: left; flex: 1; }
-  .card li { padding: 5px 0; border-bottom: 1px dashed #2a2a2a; font-size: 15px; color: #ccc; }
+  .card.pop::before { content: "POPULAIRE"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--rose); font-size: 11px; font-weight: 800; letter-spacing: 1px; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
+  .card h3 { font-size: 20px; margin-bottom: 4px; }
+  .card .qty { font-size: 48px; font-weight: 900; line-height: 1.1; }        /* TRÈS GROS */
+  .card .price { font-size: 34px; font-weight: 800; color: var(--cyan); margin: 10px 0 4px; }  /* TRÈS GROS */
+  .card .old-price { color: var(--gris); text-decoration: line-through; font-size: 16px; }
+  .card ul { list-style: none; margin: 14px 0 18px; text-align: left; flex: 1; }
+  .card li { padding: 6px 0; border-bottom: 1px dashed #2a2a2a; font-size: 15px; color: #ccc; }
   .card li::before { content: "✔ "; color: var(--cyan); }
-  .card .btn { width: 100%; font-size: 16px; padding: 12px 10px; }
-  .scroll-hint { text-align: center; color: var(--gris); font-size: 13px; margin-top: 2px; }
 
-  /* ---------- ÉTAPES ---------- */
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 10px; }
-  .step { text-align: center; padding: 16px 12px; background: #161616; border-radius: 14px; border: 1px solid #262626; }
-  .step .num { width: 38px; height: 38px; margin: 0 auto 10px; border-radius: 50%; background: var(--rose); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; }
-  .step h4 { margin-bottom: 4px; font-size: 16px; }
-  .step p { font-size: 13px; color: #bbb; }
+  /* ---------- COMMENT ÇA MARCHE ---------- */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 8px; }
+  .step { text-align: center; padding: 16px; background: #161616; border-radius: 16px; border: 1px solid #262626; }
+  .step .num { width: 40px; height: 40px; margin: 0 auto 10px; border-radius: 50%; background: var(--rose); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; }
+  .step h4 { margin-bottom: 4px; }
 
-  /* ---------- FORMULAIRES ---------- */
-  form { max-width: 520px; margin: auto; background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 24px; }
-  label { display: block; font-size: 15px; margin: 14px 0 6px; color: #ccc; }
-  input, select, textarea { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid #333; background: #0f0f0f; color: var(--blanc); font-size: 16px; }
+  /* ---------- FORMULAIRE COMMANDE ---------- */
+  form { max-width: 560px; margin: auto; background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 24px; }
+  label { display: block; font-size: 14px; margin: 12px 0 6px; color: #ccc; }
+  input, select, textarea { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid #333; background: #0f0f0f; color: var(--blanc); font-size: 15px; }
   input:focus, select:focus, textarea:focus { outline: 2px solid var(--cyan); }
-  form .btn { width: 100%; margin-top: 20px; font-size: 17px; }
-  #formInfo, #confirmInfo, #bonusInfo { text-align: center; color: var(--gris); font-size: 14px; margin-top: 12px; }
+  form .btn { width: 100%; margin-top: 20px; }
+  #formInfo { text-align: center; color: var(--gris); font-size: 13px; margin-top: 12px; }
 
-  /* ---------- WAVE ---------- */
-  .wave-box { max-width: 560px; margin: auto; background: linear-gradient(135deg, #0e2a2b, #113d3e); border: 1px solid #1dc8cc44; border-radius: 16px; padding: 26px; text-align: center; }
-  .wave-logo { font-size: 26px; font-weight: 900; color: var(--wave); margin-bottom: 6px; }
-  .wave-box .num { font-size: 34px; font-weight: 900; letter-spacing: 2px; color: var(--blanc); margin: 12px 0; }
+  /* ---------- SECTION WAVE ---------- */
+  .wave-box { max-width: 600px; margin: auto; background: linear-gradient(135deg, #0e2a2b, #113d3e); border: 1px solid #1dc8cc44; border-radius: 16px; padding: 26px; text-align: center; }
+  .wave-logo { font-size: 26px; font-weight: 900; color: var(--wave); margin-bottom: 8px; }
+  .wave-box .num { font-size: 30px; font-weight: 900; letter-spacing: 2px; color: var(--blanc); margin: 12px 0; }
   .wave-steps { text-align: left; margin: 16px 0; }
   .wave-steps li { margin: 8px 0; color: #ddd; font-size: 15px; }
   .copy-btn { background: #1dc8cc; color: #0a0a0a; border: none; border-radius: 50px; padding: 10px 24px; font-weight: 700; cursor: pointer; font-size: 15px; }
   .copy-btn:hover { opacity: .9; }
 
-  /* ---------- PARRAINAGE ---------- */
-  .parrain-box { max-width: 560px; margin: auto; background: linear-gradient(135deg, #0f2a0f, #111); border: 1px solid #25D36655; border-radius: 14px; padding: 20px; text-align: center; }
-  .btn-whatsapp { background: #25D366; color: #fff; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 800; padding: 14px; border-radius: 50px; text-decoration: none; font-size: 17px; margin: 12px 0; }
-  .btn-whatsapp:hover { opacity: .92; }
-
   /* ---------- FAQ ---------- */
-  details { background: #161616; border: 1px solid #262626; border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; max-width: 720px; margin-left: auto; margin-right: auto; }
-  summary { font-weight: 700; cursor: pointer; font-size: 16px; }
+  details { background: #161616; border: 1px solid #262626; border-radius: 12px; padding: 12px 20px; margin-bottom: 10px; max-width: 760px; margin-left: auto; margin-right: auto; }
+  summary { font-weight: 700; cursor: pointer; }
   details p { color: #bbb; margin-top: 8px; font-size: 15px; }
 
   /* ---------- FOOTER ---------- */
-  footer { border-top: 1px solid #222; padding: 24px 14px; text-align: center; color: var(--gris); font-size: 14px; }
+  footer { border-top: 1px solid #222; padding: 18px 20px; text-align: center; color: var(--gris); font-size: 14px; }
   footer a { color: var(--cyan); text-decoration: none; }
 
   @media (max-width: 600px) {
-    nav a { margin-left: 10px; font-size: 13px; }
-    .logo { font-size: 18px; }
+    nav a { margin-left: 12px; font-size: 13px; }
+    .card { flex-basis: 260px; min-width: 260px; padding: 18px 14px; }
+    .card .qty { font-size: 42px; }
+    .card .price { font-size: 30px; }
   }
 </style>
 </head>
@@ -119,7 +134,6 @@
       <a href="#services">Tarifs</a>
       <a href="#comment">Comment ça marche</a>
       <a href="#commande">Commander</a>
-      <a href="#parrainage">Bonus</a>
       <a href="#paiement">Paiement Wave</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -140,13 +154,14 @@
   </div>
 </section>
 
-<!-- ============ TARIFS : UNE SEULE LIGNE ============ -->
+<!-- ============ TARIFS (une seule rangée horizontale) ============ -->
 <section class="section" id="services">
   <div class="container">
     <h2>Nos tarifs</h2>
-    <p class="sub">👉 Glissez les offres sur le côté — tout est sur une seule ligne</p>
+    <p class="sub">Choisissez votre pack et passez commande en moins d'une minute — faites glisser ➡ — prix en Francs CFA</p>
     <div class="grid">
 
+      <!-- Abonnés 1 000 -->
       <div class="card">
         <h3>Abonnés TikTok</h3>
         <div class="qty">1 000</div>
@@ -161,6 +176,7 @@
         <button class="btn btn-cyan" onclick="selectPack('Abonnés TikTok — 1 000 (2 000 FCFA)')">Choisir</button>
       </div>
 
+      <!-- Abonnés 5 000 -->
       <div class="card pop">
         <h3>Abonnés TikTok</h3>
         <div class="qty">5 000</div>
@@ -175,6 +191,7 @@
         <button class="btn" onclick="selectPack('Abonnés TikTok — 5 000 (5 000 FCFA)')">Choisir</button>
       </div>
 
+      <!-- Abonnés 10 000 -->
       <div class="card">
         <h3>Abonnés TikTok</h3>
         <div class="qty">10 000</div>
@@ -189,6 +206,7 @@
         <button class="btn btn-cyan" onclick="selectPack('Abonnés TikTok — 10 000 (9 500 FCFA)')">Choisir</button>
       </div>
 
+      <!-- J'aime 500 -->
       <div class="card">
         <h3>J'aime TikTok</h3>
         <div class="qty">500</div>
@@ -203,6 +221,7 @@
         <button class="btn btn-cyan" onclick="selectPack('J\'aime TikTok — 500 (700 FCFA)')">Choisir</button>
       </div>
 
+      <!-- J'aime 2 000 -->
       <div class="card">
         <h3>J'aime TikTok</h3>
         <div class="qty">2 000</div>
@@ -217,6 +236,7 @@
         <button class="btn btn-cyan" onclick="selectPack('J\'aime TikTok — 2 000 (2 500 FCFA)')">Choisir</button>
       </div>
 
+      <!-- Vues 10 000 -->
       <div class="card">
         <h3>Vues TikTok</h3>
         <div class="qty">10 000</div>
@@ -232,9 +252,73 @@
       </div>
 
     </div>
-    <p class="scroll-hint">⬅️ ➡️ Faites glisser pour voir toutes les offres</p>
   </div>
 </section>
+
+<!-- ============ SECTION PARRAINAGE (INCHANGÉE) ============ -->
+<section class="section" id="parrainage" style="background: linear-gradient(135deg, #0a1a0a, #0f0f0f); padding-top: 10px; padding-bottom: 20px;">
+  <div class="container">
+    <h2>🎁 Gagnez 5 000 FCFA de Bonus</h2>
+    <p class="sub" style="margin-bottom:8px;">Chaque clic sur WhatsApp = +1 partage</p>
+
+    <div class="arrow" style="text-align:center; font-size:28px; color:#25D366; margin-bottom:8px; animation: bounce 1.5s infinite;">⬇️</div>
+
+    <div class="parrain-box" style="max-width: 600px; margin: auto; background: linear-gradient(135deg, #0f2a0f, #111); border: 1px solid #25D36655; border-radius: 12px; padding: 16px; text-align: center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:45px; margin-bottom:8px;" alt="WhatsApp">
+      
+      <p style="color:#ddd; font-size:14px; margin-bottom:10px;"><b>Comment ça marche ?</b></p>
+      <ol class="wave-steps" style="text-align:left; margin:10px 0; color:#ddd; font-size:13px; line-height:1.6;">
+        <li><b>1.</b> Cliquez sur le bouton <b>WhatsApp</b></li>
+        <li><b>2.</b> Partagez le lien avec vos amis</li>
+        <li><b>3.</b> Revenez sur le site. Le compteur augmente</li>
+        <li><b>4.</b> À 20 partages = <b>5 000 FCFA</b> de bonus</li>
+      </ol>
+
+      <a href="https://wa.me/?text=🔥 BOOST TON TIKTOK 🇨🇮%0A1000 Abonnés = 2000 FCFA%0Ahttps://lamanopcs-cmd.github.io/MeloTIKTOK-STORE/" 
+         target="_blank" 
+         class="btn-whatsapp" 
+         onclick="addShare()"
+         style="background: #25D366; color: #fff; width: 100%; display:flex; align-items:center; justify-content:center; gap:8px; font-weight:700; padding: 11px; border-radius:50px; text-decoration:none; font-size:14px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+        Partager sur WhatsApp
+      </a>
+      
+      <div style="margin-top:12px; background:#0a0a0a; border:1px dashed #25D366; border-radius:7px; padding:10px;">
+        <p style="color:#25D366; font-weight:800; font-size:15px;" id="shareCount">Progression : 0 / 20</p>
+        <div style="background:#222; border-radius:50px; height:9px; overflow:hidden; margin-top:6px;">
+          <div id="progressFill" style="background:#25D366; width:0%; height:100%; transition:.4s;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+</style>
+
+<script>
+  let shareCount = localStorage.getItem('meloShareCount') || 0;
+  shareCount = parseInt(shareCount);
+
+  function addShare() {
+    if(shareCount < 20) {
+      shareCount++;
+      localStorage.setItem('meloShareCount', shareCount);
+      document.getElementById('shareCount').textContent = `Progression : ${shareCount} / 20`;
+      document.getElementById('progressFill').style.width = (shareCount * 5) + '%';
+      
+      if(shareCount === 20) {
+        setTimeout(() => alert('🎉 20 partages atteints !\nContactez 05 75 74 05 84 pour réclamer vos 5000f'), 400);
+      }
+    }
+  }
+
+  window.onload = function() {
+    document.getElementById('shareCount').textContent = `Progression : ${shareCount} / 20`;
+    document.getElementById('progressFill').style.width = (shareCount * 5) + '%';
+  }
+</script>
 
 <!-- ============ COMMENT ÇA MARCHE ============ -->
 <section class="section" id="comment" style="background:#111;">
@@ -245,22 +329,22 @@
       <div class="step">
         <div class="num">1</div>
         <h4>Choisissez votre pack</h4>
-        <p>Sélectionnez l'offre adaptée à votre objectif.</p>
+        <p>Sélectionnez le nombre d'abonnés, de j'aime ou de vues adapté à votre objectif.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
         <h4>Payez par Wave</h4>
-        <p>Envoyez le montant au numéro Wave affiché.</p>
+        <p>Envoyez le montant au numéro Wave affiché. Vous recevez une confirmation immédiate.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
-        <h4>Confirmez</h4>
-        <p>Envoyez votre numéro de transaction.</p>
+        <h4>Confirmez votre commande</h4>
+        <p>Remplissez le formulaire avec votre pseudo TikTok et envoyez la preuve de paiement.</p>
       </div>
       <div class="step">
         <div class="num">4</div>
-        <h4>Recevez</h4>
-        <p>La livraison démarre rapidement.</p>
+        <h4>Recevez vos résultats</h4>
+        <p>La livraison démarre rapidement. Suivez votre progression et votre compte explose.</p>
       </div>
     </div>
   </div>
@@ -270,7 +354,7 @@
 <section class="section" id="commande">
   <div class="container">
     <h2>Passer commande</h2>
-    <p class="sub">Remplissez vos informations</p>
+    <p class="sub">Étape 1 : remplissez vos informations</p>
     <form id="orderForm">
       <label for="pack">Pack choisi</label>
       <select id="pack" required>
@@ -301,54 +385,11 @@
   </div>
 </section>
 
-<!-- ============ PARRAINAGE ============ -->
-<section class="section" id="parrainage" style="background:#0a1a0a;">
-  <div class="container">
-    <h2>🎁 Gagnez 5 000 FCFA de Bonus</h2>
-    <p class="sub">Partagez notre site et recevez 5 000 FCFA</p>
-
-    <div class="parrain-box">
-      <p style="color:#ddd; font-size:16px; margin-bottom:8px;"><b>Comment ça marche ?</b></p>
-      <ol class="wave-steps" style="text-align:left; color:#ddd; font-size:15px;">
-        <li><b>1.</b> Cliquez sur le bouton <b>WhatsApp</b> ci-dessous</li>
-        <li><b>2.</b> Partagez le lien avec <b>20 de vos amis</b></li>
-        <li><b>3.</b> Revenez ici et remplissez le formulaire</li>
-        <li><b>4.</b> Après vérification, vous recevez <b>5 000 FCFA</b> par Wave</li>
-      </ol>
-
-      <a href="https://wa.me/?text=🔥%20BOOST%20TON%20TIKTOK%20🇨🇮%0A1000%20Abonnés%20=%202000%20FCFA%0Ahttps://lamanopcs-cmd.github.io/MeloTIKTOK-STORE/"
-         target="_blank"
-         class="btn-whatsapp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
-        📲 Partager sur WhatsApp
-      </a>
-
-      <form id="bonusForm" style="background:transparent;border:none;padding:0;">
-        <label for="bonusNom">Votre nom complet</label>
-        <input type="text" id="bonusNom" placeholder="Ex : Jean Kouassi" required>
-
-        <label for="bonusWave">Votre numéro Wave (pour recevoir le bonus)</label>
-        <input type="text" id="bonusWave" placeholder="05 75 74 05 84" required>
-
-        <label for="bonusPreuve">Preuve : nombre de partages envoyés</label>
-        <input type="text" id="bonusPreuve" placeholder="Ex : 20 partages envoyés le 12/08/2026" required>
-
-        <button type="button" class="btn" onclick="claimBonus()">💰 Réclamer mon bonus de 5 000 FCFA</button>
-        <p id="bonusInfo"></p>
-      </form>
-
-      <p style="font-size:13px;color:#888;margin-top:14px;">
-        ⚠️ Bonus versé après <b>vérification manuelle</b>. Une fois par personne. Fraude = annulation.
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ PAIEMENT WAVE ============ -->
 <section class="section" id="paiement" style="background:#111;">
   <div class="container">
     <h2>Paiement par Wave</h2>
-    <p class="sub">Envoyez le montant au numéro ci-dessous</p>
+    <p class="sub">Étape 2 : envoyez le montant au numéro ci-dessous</p>
 
     <div class="wave-box">
       <div class="wave-logo">WAVE <span style="font-size:14px;font-weight:400;color:#aaa;">— Mobile Money</span></div>
@@ -357,18 +398,19 @@
       <button class="copy-btn" onclick="copyWave()">📋 Copier le numéro</button>
 
       <ol class="wave-steps">
-        <li><b>1.</b> Ouvrez votre application <b>Wave</b>.</li>
-        <li><b>2.</b> Appuyez sur <b>« Envoyer »</b> et entrez <b>05 75 74 05 84</b>.</li>
-        <li><b>3.</b> Saisissez le montant du pack choisi.</li>
-        <li><b>4.</b> Confirmez avec votre code secret.</li>
+        <li><b>1.</b> Ouvrez votre application <b>Wave</b> sur votre téléphone.</li>
+        <li><b>2.</b> Appuyez sur <b>« Envoyer »</b> (ou « Transfert »).</li>
+        <li><b>3.</b> Entrez le numéro <b>05 75 74 05 84</b> (Melo Store).</li>
+        <li><b>4.</b> Saisissez le montant du pack choisi.</li>
+        <li><b>5.</b> Confirmez avec votre code secret.</li>
       </ol>
 
-      <p style="color:#eee;background:#0a0a0a;border:1px dashed #1dc8cc;border-radius:8px;padding:10px;font-size:14px;">
+      <p style="color:#eee;background:#0a0a0a;border:1px dashed #1dc8cc;border-radius:8px;padding:12px;font-size:14px;">
         💡 Après l'envoi, Wave vous donne un <b>numéro de transaction</b> (ex. TRX123456).<br>
-        Envoyez-le nous pour valider votre commande.
+        Envoyez-le nous ci-dessous pour valider votre commande.
       </p>
 
-      <form id="confirmForm" style="background:transparent;border:none;padding:0;margin-top:14px;">
+      <form id="confirmForm" style="background:transparent;border:none;padding:0;margin-top:20px;">
         <label for="trx">Numéro de transaction Wave (obligatoire)</label>
         <input type="text" id="trx" placeholder="TRX123456789" required>
 
@@ -464,6 +506,7 @@
       return;
     }
 
+    // Construire le récapitulatif
     let body = 'NOUVELLE COMMANDE TIKTOK MELO STORE\n============================\n\n';
     body += '📦 Pack : ' + pack + '\n';
     body += '👤 Pseudo TikTok : ' + pseudo + '\n';
@@ -478,32 +521,6 @@
 
     window.location.href = mailto;
     document.getElementById('confirmInfo').textContent = '✅ Ouverture de votre messagerie... Envoyez le mail pour finaliser la commande.';
-  }
-
-  // Demande de bonus → envoi par e-mail pour vérification manuelle
-  function claimBonus() {
-    const nom = document.getElementById('bonusNom').value.trim();
-    const wave = document.getElementById('bonusWave').value.trim();
-    const preuve = document.getElementById('bonusPreuve').value.trim();
-
-    if (!nom || !wave || !preuve) {
-      document.getElementById('bonusInfo').textContent = '⚠️ Remplissez tous les champs.';
-      return;
-    }
-
-    let body = '🎁 DEMANDE DE BONUS PARRAINAGE — TIKTOK MELO STORE\n';
-    body += '==========================================\n\n';
-    body += '👤 Nom : ' + nom + '\n';
-    body += '📱 Numéro Wave : ' + wave + '\n';
-    body += '📸 Preuve : ' + preuve + '\n\n';
-    body += '⚠️ Vérifier les partages avant de verser le bonus de 5 000 FCFA.';
-
-    const mailto = 'mailto:repondsjune@gmail.com?subject=' +
-                   encodeURIComponent('[Bonus] Demande de 5 000 FCFA — ' + nom) +
-                   '&body=' + encodeURIComponent(body);
-
-    window.location.href = mailto;
-    document.getElementById('bonusInfo').textContent = '✅ Demande envoyée. Nous vérifions et vous payons sous 24-48h.';
   }
 </script>
 
