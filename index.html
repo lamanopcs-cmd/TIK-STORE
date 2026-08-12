@@ -10,96 +10,88 @@
     --whatsapp: #25D366;
   }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: var(--noir); color: var(--blanc); line-height: 1.5; }
-  .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+  body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; background: var(--noir); color: var(--blanc); line-height: 1.4; }
+  .container { max-width: 1100px; margin: auto; padding: 0 16px; }
 
-  header { position: sticky; top: 0; z-index: 100; background: rgba(15,15,15,.95); backdrop-filter: blur(8px); border-bottom: 1px solid #222; }
-  .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; max-width: 1100px; margin: auto; }
-  .logo { font-size: 20px; font-weight: 800; text-decoration: none; color: var(--blanc); }
+  header { position: sticky; top: 0; z-index: 100; background: rgba(15,15,15,.98); backdrop-filter: blur(8px); border-bottom: 1px solid #222; }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; max-width: 1100px; margin: auto; }
+  .logo { font-size: 18px; font-weight: 800; text-decoration: none; color: var(--blanc); }
   .logo span { color: var(--cyan); }
-  nav a { color: var(--blanc); text-decoration: none; margin-left: 18px; font-size: 14px; }
+  nav a { color: var(--blanc); text-decoration: none; margin-left: 12px; font-size: 13px; }
   nav a:hover { color: var(--cyan); }
-  .btn { display: inline-block; background: var(--rose); color: var(--blanc); padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 14px; transition: .2s; }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(254,44,85,.4); }
+  .btn { display: inline-block; background: var(--rose); color: var(--blanc); padding: 9px 18px; border-radius: 50px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 13px; transition: .2s; }
+  .btn:hover { transform: translateY(-1px); }
   .btn-cyan { background: var(--cyan); color: var(--noir); }
-  .btn-whatsapp { background: var(--whatsapp); color: var(--blanc); width: 100%; display:flex; align-items:center; justify-content:center; gap:10px; font-weight:700; }
+  .btn-whatsapp { background: var(--whatsapp); color: var(--blanc); width: 100%; display:flex; align-items:center; justify-content:center; gap:8px; font-weight:700; padding: 12px; }
 
-  .hero { text-align: center; padding: 50px 20px 40px; background: radial-gradient(circle at 20% 20%, rgba(254,44,85,.2), transparent 50%), radial-gradient(circle at 80% 30%, rgba(37,244,238,.18), transparent 50%); }
-  .hero h1 { font-size: clamp(28px, 6vw, 48px); font-weight: 900; margin-bottom: 12px; line-height: 1.2; }
-  .hero h1 em { font-style: normal; color: var(--cyan); }
-  .hero p { color: #ccc; font-size: clamp(15px, 2.5vw, 18px); max-width: 600px; margin: 0 auto 20px; }
-  .badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
-  .badge { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; padding: 10px 16px; font-size: 13px; color: #ccc; }
-  .badge b { color: var(--blanc); display: block; font-size: 16px; }
+  .hero { text-align: center; padding: 35px 16px 25px; background: radial-gradient(circle at 20% 20%, rgba(254,44,85,.15), transparent 50%); }
+  .hero h1 { font-size: clamp(24px, 6vw, 40px); font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
+  .hero h1 em { color: var(--cyan); }
+  .hero p { color: #ccc; font-size: 14px; max-width: 550px; margin: 0 auto 16px; }
+  .badges { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .badge { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 8px 12px; font-size: 12px; color: #ccc; }
+  .badge b { color: var(--blanc); display: block; font-size: 15px; }
 
-  .section { padding: 40px 20px; }
-  .section h2 { text-align: center; font-size: clamp(24px, 4vw, 32px); font-weight: 800; margin-bottom: 8px; }
-  .section .sub { text-align: center; color: var(--gris); margin-bottom: 25px; font-size: 14px; }
+  .section { padding: 25px 16px; }
+  .section h2 { text-align: center; font-size: clamp(22px, 4vw, 28px); font-weight: 800; margin-bottom: 6px; }
+  .section .sub { text-align: center; color: var(--gris); margin-bottom: 18px; font-size: 13px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-  .card { background: #161616; border: 1px solid #262626; border-radius: 14px; padding: 22px 18px; text-align: center; transition: .25s; display: flex; flex-direction: column; }
-  .card:hover { border-color: var(--cyan); transform: translateY(-3px); }
-  .card.pop { border-color: var(--rose); box-shadow: 0 0 25px rgba(254,44,85,.25); position: relative; }
-  .card.pop::before { content: "POPULAIRE"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--rose); font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 3px 12px; border-radius: 20px; }
-  .card h3 { font-size: 16px; margin-bottom: 5px; }
-  .card .qty { font-size: 30px; font-weight: 900; }
-  .card .price { font-size: 24px; font-weight: 800; color: var(--cyan); margin: 10px 0 3px; }
-  .card .old-price { color: var(--gris); text-decoration: line-through; font-size: 14px; }
-  .card ul { list-style: none; margin: 14px 0 18px; text-align: left; flex: 1; }
-  .card li { padding: 5px 0; border-bottom: 1px dashed #2a2a2a; font-size: 13px; color: #ccc; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .card { background: #161616; border: 1px solid #262626; border-radius: 12px; padding: 18px 14px; text-align: center; }
+  .card.pop { border-color: var(--rose); position: relative; }
+  .card.pop::before { content: "POPULAIRE"; position: absolute; top: -9px; left: 50%; transform: translateX(-50%); background: var(--rose); font-size: 9px; font-weight: 800; padding: 2px 10px; border-radius: 20px; }
+  .card h3 { font-size: 15px; margin-bottom: 4px; }
+  .card .qty { font-size: 26px; font-weight: 900; }
+  .card .price { font-size: 22px; font-weight: 800; color: var(--cyan); margin: 8px 0 2px; }
+  .card .old-price { color: var(--gris); text-decoration: line-through; font-size: 13px; }
+  .card ul { list-style: none; margin: 12px 0 14px; text-align: left; }
+  .card li { padding: 4px 0; font-size: 12px; color: #ccc; }
   .card li::before { content: "✔ "; color: var(--cyan); }
 
-  .parrain-box { max-width: 650px; margin: auto; background: linear-gradient(135deg, #0a1a0a, #111); border: 1px solid #25D36655; border-radius: 14px; padding: 24px; text-align: center; }
-  .parrain-box .icon { width:50px; margin-bottom:10px; }
-  .progress-bar { background:#222; border-radius:50px; height:12px; overflow:hidden; margin-top:8px; }
+  /* FLECHE + SECTION PARRAINAGE */
+  .arrow { text-align:center; font-size:32px; color:var(--whatsapp); margin: -10px 0 5px; animation: bounce 1.5s infinite; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+  
+  .parrain-box { max-width: 620px; margin: auto; background: linear-gradient(135deg, #0a1a0a, #111); border: 1px solid #25D36655; border-radius: 12px; padding: 18px; text-align: center; }
+  .parrain-box .icon { width:45px; margin-bottom:8px; }
+  .progress-bar { background:#222; border-radius:50px; height:10px; overflow:hidden; margin-top:6px; }
   .progress-fill { background:var(--whatsapp); width:0%; height:100%; transition:.4s; }
 
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 15px; }
-  .step { text-align: center; padding: 20px; background: #161616; border-radius: 14px; border: 1px solid #262626; }
-  .step .num { width: 40px; height: 40px; margin: 0 auto 12px; border-radius: 50%; background: var(--rose); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 12px; }
+  .step { text-align: center; padding: 16px; background: #161616; border-radius: 12px; border: 1px solid #262626; }
+  .step .num { width: 36px; height: 36px; margin: 0 auto 10px; border-radius: 50%; background: var(--rose); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; }
 
-  form { max-width: 560px; margin: auto; background: #161616; border: 1px solid #262626; border-radius: 14px; padding: 24px; }
-  label { display: block; font-size: 13px; margin: 14px 0 5px; color: #ccc; }
-  input, select, textarea { width: 100%; padding: 11px 13px; border-radius: 8px; border: 1px solid #333; background: #0f0f0f; color: var(--blanc); font-size: 14px; }
-  form .btn { width: 100%; margin-top: 20px; }
+  form { max-width: 540px; margin: auto; background: #161616; border: 1px solid #262626; border-radius: 12px; padding: 20px; }
+  label { display: block; font-size: 12px; margin: 12px 0 4px; color: #ccc; }
+  input, select { width: 100%; padding: 10px 12px; border-radius: 7px; border: 1px solid #333; background: #0f0f0f; color: var(--blanc); font-size: 13px; }
+  form .btn { width: 100%; margin-top: 16px; }
 
-  .wave-box { max-width: 600px; margin: auto; background: linear-gradient(135deg, #0e2a2b, #113d3e); border: 1px solid #1dc8cc44; border-radius: 14px; padding: 28px; text-align: center; }
-  .wave-box .num { font-size: 28px; font-weight: 900; letter-spacing: 2px; color: var(--blanc); margin: 12px 0; }
-  .wave-steps { text-align: left; margin: 16px 0; }
-  .wave-steps li { margin: 8px 0; color: #ddd; font-size: 14px; }
-  .copy-btn { background: #1dc8cc; color: #0a0a0a; border: none; border-radius: 50px; padding: 9px 20px; font-weight: 700; cursor: pointer; font-size: 14px; }
+  .wave-box { max-width: 580px; margin: auto; background: linear-gradient(135deg, #0e2a2b, #113d3e); border: 1px solid #1dc8cc44; border-radius: 12px; padding: 20px; text-align: center; }
+  .wave-box .num { font-size: 24px; font-weight: 900; color: var(--blanc); margin: 10px 0; }
+  .copy-btn { background: #1dc8cc; color: #0a0a0a; border: none; border-radius: 50px; padding: 8px 16px; font-weight: 700; cursor: pointer; font-size: 13px; }
 
-  details { background: #161616; border: 1px solid #262626; border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; max-width: 760px; margin-left: auto; margin-right: auto; }
-  summary { font-weight: 700; cursor: pointer; font-size: 15px; }
-  footer { border-top: 1px solid #222; padding: 24px 20px; text-align: center; color: var(--gris); font-size: 13px; }
-
-  @media (max-width: 600px) {
-    nav a { margin-left: 10px; font-size: 13px; }
-    .section { padding: 30px 20px; }
-  }
+  details { background: #161616; border: 1px solid #262626; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; max-width: 740px; margin: 0 auto 8px; }
+  footer { border-top: 1px solid #222; padding: 18px 16px; text-align: center; color: var(--gris); font-size: 12px; }
 </style>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <a href="#" class="logo">TikTok <span>Melo</span> Store</a>
+    <a href="#" class="logo">TikTok <span>Melo</span></a>
     <nav>
       <a href="#services">Tarifs</a>
       <a href="#parrainage">Bonus</a>
-      <a href="#comment">Comment</a>
       <a href="#commande">Commander</a>
-      <a href="#paiement">Wave</a>
-      <a href="#faq">FAQ</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <h1>Boostez votre compte <em>TikTok</em> dès aujourd'hui</h1>
-    <p>Abonnés, j'aime et vues de qualité. Paiement Wave.</p>
-    <a href="#commande" class="btn">Commander maintenant</a>
+    <h1>Boostez votre <em>TikTok</em> aujourd'hui</h1>
+    <p>Abonnés, j'aime et vues. Paiement Wave.</p>
+    <a href="#commande" class="btn">Commander</a>
     <div class="badges">
       <div class="badge"><b>+15 000</b>Clients</div>
       <div class="badge"><b>24/7</b>Support</div>
@@ -111,176 +103,106 @@
 <section class="section" id="services">
   <div class="container">
     <h2>Nos tarifs</h2>
-    <p class="sub">Choisissez votre pack — prix en Francs CFA</p>
+    <p class="sub">Prix en Francs CFA</p>
     <div class="grid">
-      <div class="card">
-        <h3>Abonnés TikTok</h3><div class="qty">1 000</div><div class="price">2 000 FCFA</div><div class="old-price">7 500 FCFA</div>
-        <ul><li>Profil réel & actif</li><li>Livraison 2 à 12 h</li><li>Sans mot de passe</li><li>Garantie</li></ul>
-        <button class="btn btn-cyan" onclick="selectPack('Abonnés TikTok — 1 000 (2 000 FCFA)')">Choisir</button>
-      </div>
-      <div class="card pop">
-        <h3>Abonnés TikTok</h3><div class="qty">5 000</div><div class="price">5 000 FCFA</div><div class="old-price">30 000 FCFA</div>
-        <ul><li>Profil réel & actif</li><li>Livraison progressive</li><li>Sans mot de passe</li><li>Support prioritaire</li></ul>
-        <button class="btn" onclick="selectPack('Abonnés TikTok — 5 000 (5 000 FCFA)')">Choisir</button>
-      </div>
-      <div class="card">
-        <h3>Abonnés TikTok</h3><div class="qty">10 000</div><div class="price">9 500 FCFA</div><div class="old-price">55 000 FCFA</div>
-        <ul><li>Profil réel & actif</li><li>Livraison échelonnée</li><li>Sans mot de passe</li><li>Garantie 30j</li></ul>
-        <button class="btn btn-cyan" onclick="selectPack('Abonnés TikTok — 10 000 (9 500 FCFA)')">Choisir</button>
-      </div>
-      <div class="card">
-        <h3>J'aime TikTok</h3><div class="qty">500</div><div class="price">700 FCFA</div><div class="old-price">3 500 FCFA</div>
-        <ul><li>Sur votre vidéo</li><li>Livraison 1 à 6 h</li><li>Sans mot de passe</li><li>Garantie</li></ul>
-        <button class="btn btn-cyan" onclick="selectPack('J\'aime TikTok — 500 (700 FCFA)')">Choisir</button>
-      </div>
-      <div class="card">
-        <h3>J'aime TikTok</h3><div class="qty">2 000</div><div class="price">2 500 FCFA</div><div class="old-price">10 000 FCFA</div>
-        <ul><li>Sur votre vidéo</li><li>Livraison 1 à 6 h</li><li>Sans mot de passe</li><li>Garantie 30j</li></ul>
-        <button class="btn btn-cyan" onclick="selectPack('J\'aime TikTok — 2 000 (2 500 FCFA)')">Choisir</button>
-      </div>
-      <div class="card">
-        <h3>Vues TikTok</h3><div class="qty">10 000</div><div class="price">5 000 FCFA</div><div class="old-price">12 000 FCFA</div>
-        <ul><li>Sur votre vidéo</li><li>Livraison 2 à 12 h</li><li>Sans mot de passe</li><li>Garantie</li></ul>
-        <button class="btn btn-cyan" onclick="selectPack('Vues TikTok — 10 000 (5 000 FCFA)')">Choisir</button>
-      </div>
+      <div class="card"><h3>Abonnés</h3><div class="qty">1 000</div><div class="price">2 000 FCFA</div><div class="old-price">7 500 FCFA</div><ul><li>Profil réel</li><li>2 à 12 h</li><li>Sans mdp</li></ul><button class="btn btn-cyan" onclick="selectPack('Abonnés TikTok — 1 000 (2 000 FCFA)')">Choisir</button></div>
+      <div class="card pop"><h3>Abonnés</h3><div class="qty">5 000</div><div class="price">5 000 FCFA</div><div class="old-price">30 000 FCFA</div><ul><li>Profil réel</li><li>Progressif</li><li>Prioritaire</li></ul><button class="btn" onclick="selectPack('Abonnés TikTok — 5 000 (5 000 FCFA)')">Choisir</button></div>
+      <div class="card"><h3>Abonnés</h3><div class="qty">10 000</div><div class="price">9 500 FCFA</div><div class="old-price">55 000 FCFA</div><ul><li>Profil réel</li><li>Échelonné</li><li>Garantie 30j</li></ul><button class="btn btn-cyan" onclick="selectPack('Abonnés TikTok — 10 000 (9 500 FCFA)')">Choisir</button></div>
+      <div class="card"><h3>J'aime</h3><div class="qty">500</div><div class="price">700 FCFA</div><div class="old-price">3 500 FCFA</div><ul><li>Sur vidéo</li><li>1 à 6 h</li><li>Garantie</li></ul><button class="btn btn-cyan" onclick="selectPack('J\'aime TikTok — 500 (700 FCFA)')">Choisir</button></div>
+      <div class="card"><h3>J'aime</h3><div class="qty">2 000</div><div class="price">2 500 FCFA</div><div class="old-price">10 000 FCFA</div><ul><li>Sur vidéo</li><li>1 à 6 h</li><li>Garantie 30j</li></ul><button class="btn btn-cyan" onclick="selectPack('J\'aime TikTok — 2 000 (2 500 FCFA)')">Choisir</button></div>
+      <div class="card"><h3>Vues</h3><div class="qty">10 000</div><div class="price">5 000 FCFA</div><div class="old-price">12 000 FCFA</div><ul><li>Sur vidéo</li><li>2 à 12 h</li><li>Garantie</li></ul><button class="btn btn-cyan" onclick="selectPack('Vues TikTok — 10 000 (5 000 FCFA)')">Choisir</button></div>
     </div>
   </div>
 </section>
 
-<!-- ============ SECTION PARRAINAGE ============ -->
-<section class="section" id="parrainage" style="background: linear-gradient(135deg, #0a1a0a, #0f0f0f); padding-top: 20px;">
+<!-- FLECHE + SECTION WHATSAPP COLLÉE -->
+<div class="arrow">⬇️</div>
+<section class="section" id="parrainage" style="background: linear-gradient(135deg, #0a1a0a, #0f0f0f); padding-top: 5px; padding-bottom: 25px;">
   <div class="container">
     <h2>🎁 Gagnez 5 000 FCFA de Bonus</h2>
-    <p class="sub">Cliquez sur WhatsApp et partagez. Chaque clic = +1</p>
+    <p class="sub">Chaque clic sur WhatsApp = +1</p>
 
     <div class="parrain-box">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="icon" alt="WhatsApp">
-      <p style="color:#ddd; font-size:15px; margin-bottom:12px;"><b>Comment ça marche ?</b></p>
-      <ol class="wave-steps">
-        <li><b>1.</b> Cliquez sur le bouton <b>WhatsApp</b></li>
-        <li><b>2.</b> Partagez le lien avec vos amis</li>
-        <li><b>3.</b> Revenez sur le site. Le compteur augmente</li>
-        <li><b>4.</b> À 20 partages = <b>5 000 FCFA</b> de bonus</li>
+      <ol class="wave-steps" style="text-align:left; margin:12px 0; color:#ddd; font-size:13px;">
+        <li><b>1.</b> Cliquez sur <b>WhatsApp</b></li>
+        <li><b>2.</b> Partagez le lien</li>
+        <li><b>3.</b> Revenez. Le compteur monte</li>
+        <li><b>4.</b> 20 partages = <b>5 000 FCFA</b></li>
       </ol>
 
-      <a href="https://wa.me/?text=🔥 BOOST TON TIKTOK EN 2H 🇨🇮%0A%0A1000 Abonnés = 2000 FCFA%0ACommande : https://lamanopcs-cmd.github.io/MeloTIKTOK-STORE/" 
+      <a href="https://wa.me/?text=🔥 BOOST TON TIKTOK 🇨🇮%0A1000 Abonnés = 2000 FCFA%0Ahttps://lamanopcs-cmd.github.io/MeloTIKTOK-STORE/" 
          target="_blank" 
          class="btn btn-whatsapp" onclick="addShare()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
         Partager sur WhatsApp
       </a>
       
-      <div style="margin-top:18px; background:#0a0a0a; border:1px dashed var(--whatsapp); border-radius:8px; padding:14px;">
-        <p style="color:var(--whatsapp); font-weight:800; font-size:16px;" id="shareCount">Progression : 0 / 20 partages</p>
+      <div style="margin-top:14px; background:#0a0a0a; border:1px dashed var(--whatsapp); border-radius:7px; padding:10px;">
+        <p style="color:var(--whatsapp); font-weight:800; font-size:14px;" id="shareCount">Progression : 0 / 20</p>
         <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-        <button onclick="resetShare()" style="margin-top:10px; background:#333; color:#aaa; border:none; padding:6px 12px; border-radius:6px; font-size:12px; cursor:pointer;">Réinitialiser</button>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="comment" style="background:#111;">
+<section class="section" id="commande" style="padding-top:15px;">
   <div class="container">
-    <h2>Comment ça marche ?</h2>
-    <div class="steps">
-      <div class="step"><div class="num">1</div><h4>Choisissez</h4><p>Sélectionnez votre pack.</p></div>
-      <div class="step"><div class="num">2</div><h4>Payez Wave</h4><p>Envoyez au numéro.</p></div>
-      <div class="step"><div class="num">3</div><h4>Confirmez</h4><p>Remplissez le formulaire.</p></div>
-      <div class="step"><div class="num">4</div><h4>Recevez</h4><p>Livraison rapide.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="commande">
-  <div class="container">
-    <h2>Passer commande</h2>
+    <h2>Commander</h2>
     <form id="orderForm">
-      <label for="pack">Pack choisi</label>
-      <select id="pack" required>
-        <option value="">— Sélectionnez —</option>
-        <option>Abonnés TikTok — 1 000 (2 000 FCFA)</option>
-        <option>Abonnés TikTok — 5 000 (5 000 FCFA)</option>
-        <option>Abonnés TikTok — 10 000 (9 500 FCFA)</option>
-        <option>J'aime TikTok — 500 (700 FCFA)</option>
-        <option>J'aime TikTok — 2 000 (2 500 FCFA)</option>
-        <option>Vues TikTok — 10 000 (5 000 FCFA)</option>
-      </select>
-      <label for="pseudo">Pseudo TikTok</label>
+      <label>Pack</label>
+      <select id="pack" required><option value="">— Choisir —</option><option>Abonnés TikTok — 1 000 (2 000 FCFA)</option><option>Abonnés TikTok — 5 000 (5 000 FCFA)</option><option>Abonnés TikTok — 10 000 (9 500 FCFA)</option></select>
+      <label>Pseudo TikTok</label>
       <input type="text" id="pseudo" placeholder="@votrecompte" required>
-      <label for="contact">Numéro Wave</label>
+      <label>Numéro Wave</label>
       <input type="text" id="contact" placeholder="05 75 74 05 84" required>
-      <button type="button" class="btn" onclick="goToPayment()">Continuer vers Wave ➡</button>
+      <button type="button" class="btn" onclick="goToPayment()">Payer par Wave ➡</button>
     </form>
   </div>
 </section>
 
-<section class="section" id="paiement" style="background:#111;">
+<section class="section" id="paiement" style="background:#111; padding-top:15px;">
   <div class="container">
-    <h2>Paiement par Wave</h2>
+    <h2>Paiement Wave</h2>
     <div class="wave-box">
-      <div style="font-size:24px; font-weight:900; color:var(--wave);">WAVE</div>
+      <div style="font-size:22px; font-weight:900; color:var(--wave);">WAVE</div>
       <div class="num">05 75 74 05 84</div>
       <button class="copy-btn" onclick="copyWave()">📋 Copier</button>
-      <form id="confirmForm" style="background:transparent;border:none;padding:0;margin-top:15px;">
-        <label for="trx">Numéro de transaction</label>
-        <input type="text" id="trx" placeholder="TRX123456789" required>
-        <label for="clientEmail">E-mail ou WhatsApp</label>
-        <input type="text" id="clientEmail" placeholder="exemple@gmail.com" required>
-        <button type="button" class="btn" style="background:var(--wave)" onclick="confirmPayment()">✅ J'ai payé</button>
+      <form style="background:transparent;border:none;padding:0;margin-top:12px;">
+        <label>Numéro transaction</label>
+        <input type="text" id="trx" placeholder="TRX123" required>
+        <label>Contact</label>
+        <input type="text" id="clientEmail" placeholder="WhatsApp" required>
+        <button type="button" class="btn" style="background:var(--wave)" onclick="confirmPayment()">✅ Confirmer</button>
       </form>
     </div>
   </div>
 </section>
 
-<section class="section" id="faq" style="background:#111;">
-  <div class="container">
-    <h2>FAQ</h2>
-    <details open><summary>Faut-il donner mon mot de passe ?</summary><p>Non, jamais.</p></details>
-    <details><summary>Comment payer par Wave ?</summary><p>Envoyez au 05 75 74 05 84.</p></details>
-  </div>
-</section>
-
 <footer>
-  <div class="container">
-    <p><strong>TikTok Melo Store</strong> — Service de croissance TikTok.</p>
-    <p>© 2026 Tous droits réservés.</p>
-  </div>
+  <p><strong>TikTok Melo Store</strong> © 2026</p>
 </footer>
 
 <script>
-  // CHARGER LE COMPTEUR AU DÉMARRAGE
   let shareCount = localStorage.getItem('meloShareCount') || 0;
   shareCount = parseInt(shareCount);
 
-  window.onload = function() {
-    updateShareDisplay();
-  }
+  window.onload = function() { updateShareDisplay(); }
 
   function addShare() {
     if(shareCount < 20) {
       shareCount++;
-      localStorage.setItem('meloShareCount', shareCount); // Sauvegarde
+      localStorage.setItem('meloShareCount', shareCount);
       updateShareDisplay();
-      
       if(shareCount === 20) {
-        setTimeout(() => {
-          alert('🎉 Félicitations ! 20 partages atteints !\nContactez-nous sur WhatsApp 05 75 74 05 84 pour réclamer vos 5000f');
-        }, 500);
+        setTimeout(() => alert('🎉 20 partages ! Contactez 05 75 74 05 84 pour vos 5000f'), 400);
       }
     }
   }
 
   function updateShareDisplay() {
-    document.getElementById('shareCount').textContent = `Progression : ${shareCount} / 20 partages`;
+    document.getElementById('shareCount').textContent = `Progression : ${shareCount} / 20`;
     document.getElementById('progressFill').style.width = (shareCount * 5) + '%';
-  }
-
-  function resetShare() {
-    if(confirm('Voulez-vous vraiment réinitialiser le compteur ?')) {
-      shareCount = 0;
-      localStorage.setItem('meloShareCount', 0);
-      updateShareDisplay();
-    }
   }
 
   function selectPack(pack) {
@@ -289,17 +211,14 @@
   }
 
   function copyWave() {
-    navigator.clipboard.writeText('0575740584').then(() => alert('Numéro copié : 05 75 74 05 84'));
+    navigator.clipboard.writeText('0575740584').then(() => alert('Copié : 05 75 74 05 84'));
   }
 
   function goToPayment() {
     const pack = document.getElementById('pack').value;
     const pseudo = document.getElementById('pseudo').value.trim();
     const contact = document.getElementById('contact').value.trim();
-    if (!pack || !pseudo || !contact) {
-      alert('⚠️ Remplissez tous les champs');
-      return;
-    }
+    if (!pack || !pseudo || !contact) { alert('⚠️ Remplissez tout'); return; }
     document.getElementById('paiement').scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -309,12 +228,8 @@
     const contact = document.getElementById('contact').value.trim();
     const trx = document.getElementById('trx').value.trim();
     const clientEmail = document.getElementById('clientEmail').value.trim();
-    if (!pack || !pseudo || !contact || !trx) {
-      alert('⚠️ Remplissez tous les champs');
-      return;
-    }
-    let body = `NOUVELLE COMMANDE\nPack: ${pack}\nPseudo: ${pseudo}\nWave: ${contact}\nTRX: ${trx}\nContact: ${clientEmail}`;
-    window.location.href = 'mailto:repondsjune@gmail.com?subject=' + encodeURIComponent('Commande Wave — ' + pack) + '&body=' + encodeURIComponent(body);
+    if (!pack || !pseudo || !contact || !trx) { alert('⚠️ Remplissez tout'); return; }
+    window.location.href = 'mailto:repondsjune@gmail.com?subject=' + encodeURIComponent('Commande — ' + pack) + '&body=' + encodeURIComponent(`Pack: ${pack}\nPseudo: ${pseudo}\nWave: ${contact}\nTRX: ${trx}\nContact: ${clientEmail}`);
   }
 </script>
 
