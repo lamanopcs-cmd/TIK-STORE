@@ -218,7 +218,7 @@
       <div class="step">
         <div class="num">3</div>
         <h4>Confirmez votre commande</h4>
-        <p>Entrez le numéro de transaction + votre contact pour livraison.</p>
+        <p>Entrez le numéro de transaction + votre nom TikTok pour livraison.</p>
       </div>
     </div>
   </div>
@@ -279,11 +279,11 @@
       <button class="btn-next" onclick="etape(3)">J'ai payé — Continuer →</button>
     </div>
 
-    <!-- ÉTAPE 3 -->
+    <!-- ÉTAPE 3 : MODIFIÉE -->
     <div class="step-panel" id="panel3">
-      <p style="font-size:14px;color:#aaa;">Dernière étape : laissez-nous un contact</p>
-      <p class="hint">📞 Votre e-mail ou WhatsApp (pour recevoir la commande)</p>
-      <input type="text" id="contactInput" placeholder="exemple@gmail.com ou +225 07 00 00 00 00">
+      <p style="font-size:14px;color:#aaa;">Dernière étape : votre compte TikTok</p>
+      <p class="hint">📱 Votre nom d’utilisateur TikTok (pour recevoir la commande)</p>
+      <input type="text" id="contactInput" placeholder="@votre_pseudo_tiktok">
       <button class="confirm-btn" onclick="confirmerPaiement()">✅ Confirmer ma commande</button>
       <p id="confirmMsg"></p>
     </div>
@@ -338,9 +338,9 @@
     const msg = document.getElementById('confirmMsg');
 
     if (!trx) { msg.textContent = '⚠️ Indiquez le numéro de transaction Wave.'; msg.className = 'err'; return; }
-    if (!contact) { msg.textContent = '⚠️ Indiquez votre e-mail ou WhatsApp.'; msg.className = 'err'; return; }
+    if (!contact) { msg.textContent = '⚠️ Indiquez votre nom d\'utilisateur TikTok.'; msg.className = 'err'; return; }
 
-    msg.textContent = '✅ Commande reçue ! Nous vous contactons sur ' + contact + ' pour la livraison.';
+    msg.textContent = '✅ Commande reçue ! Nous allons livrer sur ' + contact + ' très vite.';
     msg.className = 'ok';
     setTimeout(fermerPopup, 3000);
   }
